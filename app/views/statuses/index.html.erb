@@ -1,0 +1,40 @@
+<h1>Statuses</h1>
+<br>
+<% if notice != nil %>
+<%= notice %>
+
+<% end %>
+<br>
+<%= link_to "New Status", new_status_path %>
+<br>
+<table>
+  <thead>
+    <th>
+      User
+    </th>
+    <th>
+      Status
+    </th>
+    <th>
+      "Likes"
+    </th>
+  </thead>
+  <tbody>
+    <% @statuses.each do |s| %>
+    <tr>
+      <td>
+        <%=s.user %>
+      </td>
+      <td>
+        <%= s.status %>
+      </td>
+      <td>
+        <%= s.likes %>
+      </td>
+      <td>
+        <%= link_to("show", s) %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

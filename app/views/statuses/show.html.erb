@@ -1,0 +1,16 @@
+<% if notice != nil %>
+<%= notice %>
+
+<% end %>
+<h3><%= @status.status%></h3>
+<br>
+<h3><%= @status.user %></h3>
+<br>
+<h3><%= @status.likes %></h3>
+<br>
+
+<%= link_to("Edit", edit_status_path) %>
+<br>
+<%= link_to("destroy", @status, method: :delete, data: {confirm: "are you sure you want to totes deletes?"}) %>
+<br>
+<%= link_to "All Statuses", statuses_path %>
